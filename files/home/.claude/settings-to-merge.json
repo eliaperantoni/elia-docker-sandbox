@@ -4,5 +4,9 @@
     "ask": [
       "Bash(gh pr create *)"
     ]
+  },
+  "env": { "ENABLE_LSP_TOOL": "1" },
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true
   }
 }

@@ -12,7 +12,6 @@ commands:
           mkdir -p /home/agent/.claude
           test -f /home/agent/.claude/settings.json || echo '{}' > /home/agent/.claude/settings.json
           jq -s '.[0] * .[1]' /home/agent/.claude/settings.json /home/agent/.claude/settings-to-merge.json > /tmp/claude-settings-merged.json && mv /tmp/claude-settings-merged.json /home/agent/.claude/settings.json
-          JSON
       user: "1000"
       description: Write user-scope claude settings
     - command:
@@ -22,3 +21,11 @@ commands:
           git config --global url."https://github.com/".insteadOf "git@github.com:"
       user: "1000"
       description: Configure git to use HTTPS for GitHub
+
+network:
+  allowedDomains:
+    - package-registry-ts
+
+environment:
+  variables:
+    UV_INDEX_TWIG_PIP_USERNAME: twig-pypi-read-only
