@@ -29,3 +29,4 @@ network:
 environment:
   variables:
     UV_INDEX_TWIG_PIP_USERNAME: twig-pypi-read-only
+    UV_PROJECT_ENVIRONMENT: /tmp/venv
